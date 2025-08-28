@@ -2,7 +2,7 @@
 set -euo pipefail
 # Create a clean commit history representing incremental development steps.
 git init
-git add LICENSE README.md diagrams docker include src tools CMakeLists.txt .github tests
+git add README.md diagrams docker include src tools CMakeLists.txt .github tests
 git commit -m "chore: repo scaffold (README, license, CMake, structure)"
 git add include/udp/common.hpp include/udp/socket.hpp src/socket.cpp
 git commit -m "feat(core): base UDP socket (batch send/recv), mock socket"
