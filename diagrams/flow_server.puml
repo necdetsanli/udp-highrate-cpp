@@ -1,0 +1,15 @@
+
+@startuml
+start
+:socket.bind();
+repeat
+  :recvmmsg(batch);
+  if (r > 0) then (yes)
+    :update stats;
+    if (echo) then (yes)
+      :sendmmsg(batch);
+    endif
+  endif
+repeat while (running)
+stop
+@enduml

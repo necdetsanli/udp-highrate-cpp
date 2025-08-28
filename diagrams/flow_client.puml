@@ -1,0 +1,11 @@
+
+@startuml
+start
+:socket.connect();
+:while (running && not timeout);
+:prepare batch (seq, ts, magic);
+:sendmmsg(batch);
+:sleep to pace pps;
+:loop;
+stop
+@enduml

@@ -1,0 +1,10 @@
+
+@startuml
+title Client -> Server Sequence
+participant Client
+participant Server
+
+Client -> Server: UDP Packet (seq, ts, magic, payload)
+Server -> Server: Parse + Stats update
+Server --> Client: (optional) Echo
+@enduml

@@ -1,0 +1,23 @@
+
+@startuml
+title Architecture Overview
+class UdpServer {
+  +start()
+  +stop()
+  -run_loop()
+}
+class UdpClient {
+  +start()
+  +stop()
+  -run_loop()
+}
+class UdpSocket
+class MetricsHttpServer
+class Stats
+
+UdpServer --> UdpSocket
+UdpClient --> UdpSocket
+UdpServer --> Stats
+UdpClient --> Stats
+UdpServer --> MetricsHttpServer
+@enduml
