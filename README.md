@@ -168,15 +168,6 @@ docker run --net=host --rm udp-highrate:latest \
 
 ---
 
-## 7) Git Commit Plan
-
-Run this script from repo root to create a clean, incremental history matching the design flow:
-```bash
-bash tools/commit_plan.sh
-```
-
----
-
 ## 8) CLI
 
 **udp_server**
