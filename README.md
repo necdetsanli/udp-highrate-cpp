@@ -156,28 +156,19 @@ docker build -t udp-highrate:latest -f docker/Dockerfile .
 **Run server**:
 ```bash
 docker run --net=host --rm udp-highrate:latest \
-  /app/bin/udp_server --port 9000 --metrics-port 9100 --batch 64
+  udp_server --port 9000 --metrics-port 9100 --batch 64
 ```
 **Run client(s)**:
 ```bash
 docker run --net=host --rm udp-highrate:latest \
-  /app/bin/udp_client --server 127.0.0.1 --port 9000 --pps 10000 --seconds 5 --payload 64
+  udp_client --server 127.0.0.1 --port 9000 --pps 10000 --seconds 5 --payload 64
 ```
 
 > `--net=host` is used for maximum UDP performance in local demos.
 
 ---
 
-## 7) Git Commit Plan
-
-Run this script from repo root to create a clean, incremental history matching the design flow:
-```bash
-bash tools/commit_plan.sh
-```
-
----
-
-## 8) CLI
+## 7) CLI
 
 **udp_server**
 ```
@@ -203,7 +194,7 @@ bash tools/commit_plan.sh
 
 ---
 
-## 9) Limitations (Pros/Cons)
+## 8) Limitations (Pros/Cons)
 
 **Pros**
 - High-throughput via Linux `recvmmsg/sendmmsg` batching
@@ -218,7 +209,7 @@ bash tools/commit_plan.sh
 
 ---
 
-## 10) Repo Structure
+## 9) Repo Structure
 
 ```
 .
