@@ -1,0 +1,12 @@
+# Exclude local build artifacts from Docker context
+build/
+build-*/
+build-cov/
+coverage-html/
+*.gcda
+*.gcno
+*.info
+CMakeCache.txt
+CMakeFiles/
+cmake-build-*/
+.git
